@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #87a8be, #b9bec2); /* Fancy linear gradient */
+    color: #fff; /* Set text color for the dark mode */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode {
+    background: linear-gradient(to right, #2c3e50, #34495e); /* Dark mode gradient */
+    color: #ecf0f1; /* Set text color for the dark mode */
+}
+
+.memory-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* Adjust the size for mobile */
+    grid-template-rows: repeat(4, 80px); /* Adjust the size for mobile */
+    grid-gap: 5px; /* Adjust the gap for mobile */
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.memory-card {
+    width: 80px; 
+    height: 80px; 
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px; 
+    text-align: center;
+    line-height: 80px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 8px; 
+}
+
+.memory-card p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+
+.memory-card-hidden p {
+    visibility: hidden;
+    margin: 0;
+}
+
+.memory-card.flipped {
+    background-color: #2ecc71;
+}
+
+.dark-mode .memory-board {
+    background-color: #2c3e50;
+}
+
+.dark-mode .memory-card {
+    background-color: #34495e;
+}
+
+.dark-mode .memory-card-hidden {
+    background-color: #2c3e50;
+}
+
+#darkModeButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
