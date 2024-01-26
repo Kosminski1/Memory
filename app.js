@@ -75,7 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to toggle dark mode
     function toggleDarkMode() {
+        const darkModeButton = document.getElementById('darkModeButton');
         document.body.classList.toggle('dark-mode');
         memoryBoard.classList.toggle('dark-mode');
+        darkModeButton.innerHTML = document.body.classList.contains('dark-mode') ? '🌙' : '&#128161;'; // Moon and light bulb Unicode characters
     }
+
+    // Event listener for dark mode button
+    const darkModeButton = document.getElementById('darkModeButton');
+    darkModeButton.addEventListener('click', toggleDarkMode);
 });

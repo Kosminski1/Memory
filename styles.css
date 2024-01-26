@@ -37,7 +37,7 @@ body {
     color: #fff;
     font-size: 16px; 
     text-align: center;
-    line-height: 70px; 
+    line-height: 80px; 
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     border-radius: 8px; 
@@ -66,11 +66,15 @@ body {
 }
 
 .dark-mode .memory-card {
-    background-color: #34495e;
+    background-color: #dbe1e7;
 }
 
 .dark-mode .memory-card-hidden {
-    background-color: #2c3e50;
+    background-color: #c7d1db;
+}
+
+.dark-mode .memory-card.flipped {
+    background-color: #2ecc71;
 }
 
 #darkModeButton {
