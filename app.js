@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             matchedPairs++;
 
             if (matchedPairs === totalPairs) {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                });
                 alert('Congratulations! You won the in ${attempts} attempts!');
             }
 
