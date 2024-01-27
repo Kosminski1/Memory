@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const memoryBoard = document.getElementById('memoryBoard');
+    const attemptsCounter = document.getElementById('attemptsCounter');
     const gridSize = 6;
     const totalPairs = (gridSize * gridSize) / 2;
+    let attempts = 0; 
 
     const emojis = ['🐱', '🐶', '🐻', '🐼', '🦊', '🐰', '🦄', '🐍', '🐢', '🐠', '🐙', '🦑'];
 
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             flippedCards.push(cardElement);
 
             if (flippedCards.length === 2) {
+                attempts++;
+                updateAttemptsCounter();
                 setTimeout(checkForMatch, 500);
             }
         }
@@ -46,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             matchedPairs++;
 
             if (matchedPairs === totalPairs) {
-                alert('Congratulations! You won the game!');
+                alert('Congratulations! You won the in ${attempts} attempts!');
             }
+
         } else {
             // No match, flip the cards back
             card1.classList.remove('flipped');
@@ -57,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         flippedCards = [];
+        updateAttemptsCounter();
+
     }
 
     function generateCardArray(totalCards, emojis) {
@@ -71,6 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
+    }
+    //Function to update the number of attempts
+    function updateAttemptsCounter() {
+        attemptsCounter.textContent = `Attempts: ${attempts}`;
     }
 
     // Function to toggle dark mode

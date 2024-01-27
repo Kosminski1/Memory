@@ -10,24 +10,37 @@ body {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+#gameContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+    text-align: center;
+}
+
+#attemptsCounter {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px; 
+}
+
+.dark-mode #attemptsCounter{
+    font-size: 18px;
+    color: #f0ebeb;
+    margin-top: 20px;
+}
+
 .dark-mode {
     background: linear-gradient(to right, #2c3e50, #34495e); /* Dark mode gradient */
     color: #ecf0f1; /* Set text color for the dark mode */
 }
 
-.memory-board {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#memoryBoard {
     display: grid;
-    grid-template-columns: repeat(3, 80px); /* Adjust the size for mobile */
-    grid-template-rows: repeat(4, 80px); /* Adjust the size for mobile */
-    grid-gap: 5px; /* Adjust the gap for mobile */
-    background-color: #ecf0f1;
-    padding: 10px;
-    border-radius: 15px;
-    transition: background-color 0.3s ease-in-out;
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(6, 80px); 
+    grid-gap: 5px; 
+    justify-content: center;
+    align-content: center;
 }
 
 .memory-card {
