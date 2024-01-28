@@ -48,13 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card1.removeEventListener('click', flipCard);
             card2.removeEventListener('click', flipCard);
             matchedPairs++;
+            alert('Congratulations! You won the in ${attempts} attempts!');
+
 
             if (matchedPairs === totalPairs) {
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 },
-                });
                 alert('Congratulations! You won the in ${attempts} attempts!');
             }
 
