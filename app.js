@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card1.removeEventListener('click', flipCard);
             card2.removeEventListener('click', flipCard);
             matchedPairs++;
-            alert('Congratulations! You won the in ${attempts} attempts!');
+            alert(`Congratulations! You won the in ${attempts} attempts!`);
 
 
             if (matchedPairs === totalPairs) {
-                alert('Congratulations! You won the in ${attempts} attempts!');
+                alert(`Congratulations! You won the in ${attempts} attempts!`);
             }
 
         } else {
