@@ -25,7 +25,22 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 1000;
+    overflow: hidden;
 }
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #f00; /* Change color as needed */
+    position: absolute;
+    animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
 
 #attemptsCounter {
     font-size: 18px;
@@ -62,7 +77,7 @@ body {
     text-align: center;
     line-height: 80px; 
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
     border-radius: 8px; 
 }
 

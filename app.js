@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const memoryBoard = document.getElementById('memoryBoard');
     const attemptsCounter = document.getElementById('attemptsCounter');
@@ -48,10 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             card1.removeEventListener('click', flipCard);
             card2.removeEventListener('click', flipCard);
             matchedPairs++;
-            alert(`Congratulations! You won the in ${attempts} attempts!`);
-
 
             if (matchedPairs === totalPairs) {
+               // createConfetti();
                 alert(`Congratulations! You won the in ${attempts} attempts!`);
             }
 
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateAttemptsCounter();
 
     }
+
 
     function generateCardArray(totalCards, emojis) {
         const emojiSubset = emojis.slice(0, totalCards / 2);
@@ -84,6 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
     //Function to update the number of attempts
     function updateAttemptsCounter() {
         attemptsCounter.textContent = `Attempts: ${attempts}`;
+    }
+
+    //Confetti Creation
+    function createConfetti() {
+        const confettiContainer = document.getElementById('confettiContainer');
+        const confettiCount = 50;
+    
+        for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 2 + 1 + 's';
+            confettiContainer.appendChild(confetti);
+        }
     }
 
     // Function to toggle dark mode
