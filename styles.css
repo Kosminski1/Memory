@@ -60,8 +60,8 @@ body {
 
 #memoryBoard {
     display: grid;
-    grid-template-columns: repeat(6, 80px);
-    grid-template-rows: repeat(6, 80px); 
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px); 
     grid-gap: 5px; 
     justify-content: center;
     align-content: center;

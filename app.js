@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const memoryBoard = document.getElementById('memoryBoard');
     const attemptsCounter = document.getElementById('attemptsCounter');
-    const gridSize = 6;
+    const gridSize = 4;
     const totalPairs = (gridSize * gridSize) / 2;
     let attempts = 0; 
 
-    const emojis = ['🐱', '🐶', '🐻', '🐼', '🦊', '🐰', '🦄', '🐍', '🐢', '🐠', '🐙', '🦑'];
+    const emojis = ['🐱', '🐶', '🐻', '🐼', '🦊', '🐰', '🦄', '🐍',];
 
     let cards = generateCardArray(totalPairs * 2, emojis);
     cards = shuffleArray(cards);
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (matchedPairs === totalPairs) {
                 createConfetti();
-                //alert(`Congratulations! You won the in ${attempts} attempts!`);
             }
 
         } else {
@@ -65,9 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         flippedCards = [];
         updateAttemptsCounter();
-
     }
-
 
     function generateCardArray(totalCards, emojis) {
         const emojiSubset = emojis.slice(0, totalCards / 2);
